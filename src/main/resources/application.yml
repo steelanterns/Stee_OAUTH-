@@ -1,0 +1,47 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: Fortify Authorization
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/fortify
+    username: fortify
+    password: fortify
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
+
+#spring:
+#  security:
+#    oauth2:
+#      authorizationserver:
+#        client:
+#          client:
+#            registration:
+#              client-id: "client"
+#              client-secret: "{noop}secret"
+#              client-authentication-methods:
+#                - "client_secret_basic"
+#              authorization-grant-types:
+#                - "authorization_code"
+#                - "refresh_token"
+#              redirect-uris:
+#                - "http://127.0.0.1:8080/login/oauth2/code/spring"
+#              post-logout-redirect-uris:
+#                - "http://127.0.0.1:8080/logged-out"
+#              scopes:
+#                - "openid"
+#                - "profile"
+#                - "user.read"
+#                - "user.write"
+#            require-authorization-consent: false
+#            require-proof-key: false
